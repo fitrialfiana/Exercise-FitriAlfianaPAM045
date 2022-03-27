@@ -16,6 +16,7 @@
         android:layout_marginRight="16dp"
         android:background="@color/white"
         android:ems="10"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
         android:hint="@string/edAlamat"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
@@ -27,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.504" />
 
-    <EditText
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,12 +41,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.852" />
 
-    <EditText
+    <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="41dp"
         android:text="Welcome in Todo App"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,11 +63,11 @@
         android:textColor="@color/teal_200"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.864" />
 
     <Button
         android:id="@+id/btRegis"

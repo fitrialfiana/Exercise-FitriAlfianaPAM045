@@ -1,22 +1,20 @@
 package com.example.exercise1pam;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class TaskHasil extends AppCompatActivity {
-    TextView nama;
+    TextView Dtask2, DjTask2, Dttask2;
 
-    //Mendeklarasikan variabel dengan tipe data TextView
-    EditText Dtask, DjTask, Dttask;
-
-    //deklarasi variabel dengan tipe data floating action button
-    FloatingActionButton fab;
-
-    String namatask, jenistask, timetask;
+    String namatask2, jenistask2, timetask2;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,21 +27,18 @@ public class TaskHasil extends AppCompatActivity {
         super.onCreate(savedInstancestate);
         setContentView(R.layout.taskhasil);
 
-        Dtask = findViewById(R.id.eMT);
-        DjTask = findViewById(R.id.eJT);
-        Dttask = findViewById(R.id.eTimeT);
-        nama = findViewById(R.id.eNma);
-        fab = findViewById(R.id.floatingActionButton);
+        Dtask2 = findViewById(R.id.eMT2);
+        DjTask2 = findViewById(R.id.eJT2);
+        Dttask2 = findViewById(R.id.eTimeT2);
+        Bundle b = getIntent().getExtras();
 
-        //mendeklarasikan variabel bundle yang akan digunakan untuk mengambil pesan yang dikirimkan melalui method intent
-        Bundle bundle = getIntent().getExtras();
+        namatask2 = b.getString("a");
+        jenistask2 = b.getString("b");
+        timetask2 = b.getString("c");
 
-        namatask = bundle.getString("a");
-        jenistask = bundle.getString("b");
-        timetask = bundle.getString("c");
+        Dtask2.setText(namatask2);
+        DjTask2.setText(jenistask2);
+        Dttask2.setText(timetask2);
 
-        Dtask.setText(namatask);
-        DjTask.setText(jenistask);
-        Dttask.setText(timetask);
     }
 }

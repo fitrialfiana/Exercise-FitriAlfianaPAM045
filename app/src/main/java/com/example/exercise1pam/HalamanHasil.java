@@ -15,13 +15,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HalamanHasil extends AppCompatActivity {
-    TextView nama;
+    TextView nama2;
 
     //Mendeklarasikan variabel dengan tipe data TextView
     EditText Dtask, DjTask, Dttask;
 
     //deklarasi variabel dengan tipe data floating action button
-    FloatingActionButton fab;
+    FloatingActionButton nambah;
 
     String namatask, jenistask, timetask;
 
@@ -39,41 +39,79 @@ public class HalamanHasil extends AppCompatActivity {
         Dtask = findViewById(R.id.eMT);
         DjTask = findViewById(R.id.eJT);
         Dttask = findViewById(R.id.eTimeT);
-        nama = findViewById(R.id.eNma);
-        fab = findViewById(R.id.floatingActionButton);
+        nama2 = findViewById(R.id.eNma);
+        nambah = findViewById(R.id.floatingActionButton);
 
-        //mendeklarasikan variabel bundle yang akan digunakan untuk mengambil pesan yang dikirimkan melalui method intent
-        Bundle bundle = getIntent().getExtras();
-        //membuat variabel string yang digunakan untuk menyimpan data yang dikirimkan dari activity sebelumnya dengan kunci "a"
-        namatask = bundle.getString("x");
-        //menampilkan value dari variabel email kedalam nama task
-        nama.setText(namatask);
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
+        nambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Bundle b = new Bundle();
-                b.putString("a", namatask.trim());
-                b.putString("b", jenistask.trim());
-                b.putString("c", timetask.trim());
-                Intent i = new Intent(getApplicationContext(), TaskHasil.class);
-                i.putExtras(b);
-                startActivity(i);
+                namatask = Dtask.getText().toString();
+                jenistask = DjTask.getText().toString();
+                timetask = Dttask.getText().toString();
+
+                if(namatask.length()==0){
+                    Dtask.setError("Isi Nama Task");
+                    Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+                }
+                else if(jenistask.length()==0){
+                    DjTask.setError("Isi Jenis Task");
+                    Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+                }
+                else if(timetask.length()==0){
+                    Dttask.setError("Isi TimeTask");
+                    Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Sukses isi task", Toast.LENGTH_SHORT).show();
+
+                    Bundle b = new Bundle();
+
+                    b.putString("task", namatask.trim());
+                    b.putString("task", jenistask.trim());
+                    b.putString("task", timetask.trim());
+
+                    Intent in = new Intent(getApplicationContext(), TaskHasil.class);
+
+                    in.putExtras(b);
+                    startActivity(in);
+                }
             }
         });
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.mnSubmit)
-        {
-            Intent i = new Intent(getApplicationContext(), TaskHasil.class);
-            startActivity(i);
+        if(item.getItemId() == R.id.mnSubmit) {
+            namatask = Dtask.getText().toString();
+            jenistask = DjTask.getText().toString();
+            timetask = Dttask.getText().toString();
+
+            if (namatask.length() == 0) {
+                Dtask.setError("Isi Nama Task");
+                Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+            } else if (jenistask.length() == 0) {
+                DjTask.setError("Isi Jenis Task");
+                Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+            } else if (timetask.length() == 0) {
+                Dttask.setError("Isi TimeTask");
+                Toast.makeText(getApplicationContext(), "Isi semua data", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Sukses isi task", Toast.LENGTH_SHORT).show();
+
+                Bundle b = new Bundle();
+
+                b.putString("x", namatask.trim());
+                b.putString("y", jenistask.trim());
+                b.putString("z", timetask.trim());
+
+                Intent in = new Intent(getApplicationContext(), TaskHasil.class);
+
+                in.putExtras(b);
+                startActivity(in);
+            }
         }
-        else if (item.getItemId() == R.id.mnLogout)
-        {
+        else{
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         }

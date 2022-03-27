@@ -14,13 +14,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Deklarasi variabel untuk button
+    //Deklarasi variabel untuk button signin
     Button btnSignin;
 
     //Deklarasi variabel untuk EditText
     EditText edEmail, edPassword;
 
-    //deklarasi variabel untuk menyimpan email dan password
+    //deklarasi variabel untuk menyimpan nama dan password
     String nama, password;
 
     TextView Register;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //menghubungkan variabel btnLogin dengan component pada layout
+        //menghubungkan variabel btnSignn dengan component pada layout
         btnSignin = findViewById(R.id.btRegis);
 
         //Menghubungkan variabel edemail dengan component pada layout
@@ -39,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
         //menghubungkan variabel edpassword dengan component pada layout
         edPassword = findViewById(R.id.txPassword);
 
-        //menghubungkan variabel edpassword dengan component pada layout
+        //menghubungkan variabel Register dengan component pada layout
         Register = findViewById(R.id.idreg);
 
+        //Membuat method saat klik Register berpindah ke Activity hasil
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Membuat objek intent berpindah activity dari mainactivity ke ActivityHasil
+                //Membuat objek intent supaya activity berpindah dari mainactivity ke ActivityHasil
                 Intent i = new Intent(getApplicationContext(), HalamanKedua.class);
                 startActivity(i);
             }
@@ -62,14 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 //Menyimpan input user di edittext password kedalam variabel password
                 password = edPassword.getText().toString();
 
-                //Mengeset email yang benar
+                //Mengeset isi nama yang benar
                 String email = "Fitri";
 
                 //Mengeset password yang benar
-                String pass = "123";
+                String pass = "1234";
 
-
-                //Mengecek apakah edittext email dan password terdapat isi atau tidak
+                //Mengecek apakah edittext nama, email, password dan repass sudah terdapat isi atau tidak
                 if (nama.length()==0) {
                     edEmail.setError("Nama harus ada");
                     //Membuat variabel toast dan menampilkan pesan "edittext tidak boleh kosong"
@@ -92,15 +92,13 @@ public class MainActivity extends AppCompatActivity {
                         t.show();
                         Bundle bundle = new Bundle();
                         bundle.putString("x",nama.trim());
-                        //Membuat objek intent berpindah activity dari mainactivity ke ActivityHasil
+                        //Membuat objek intent berpindah activity dari mainactivity ke Halamanhasil
                         Intent i = new Intent(getApplicationContext(), HalamanHasil.class);
                         i.putExtras(bundle);
                         //berpindah ke ActivityHasil
                         startActivity(i);
-
                     }
                 else {
-
                     Toast.makeText(getApplicationContext(),"Nama salah",Toast.LENGTH_LONG).show();
                 }
 

@@ -11,15 +11,14 @@
         android:theme="@style/Theme.Exercise1PAM">
         <activity
             android:name=".HalamanKedua"
-            android:label="@string/label2"
-            android:parentActivityName=".MainActivity" />
+            android:label="@string/label3"/>
         <activity
             android:name=".HalamanHasil"
             android:label="@string/label2"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TaskHasil"
-            android:label="@string/label2"
+            android:label="@string/label4"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"

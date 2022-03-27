@@ -9,6 +9,8 @@
     <string name="temail">Email: </string>
     <string name="tpassword">Password: </string>
     <string name="label2">Login Berhasil</string>
+    <string name="label3">Register Berhasil</string>
+    <string name="label4">Isi Data Berhasil</string>
     <string name="mDaftar">Pendaftaran</string>
     <string name="idaftar">Daftar</string>
     <string name="edAlamat">Masukkan Nama</string>
