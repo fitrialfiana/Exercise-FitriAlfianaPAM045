@@ -16,7 +16,7 @@
     <string name="edPass">Masukkan Password</string>
     <string name="erepass">Masukkan Password Kembali</string>
     <string name="ealamat">Masukkan Alamat</string>
-    <string name="eNm"></string>
+    <string name="eNm">Fifi</string>
 
     <string name="eTask">Masukkan Task</string>
     <string name="eJTask">Masukkan Jenis Task</string>
@@ -25,6 +25,11 @@
 
     <string name="eSubmit">Submit</string>
     <string name="eLogout">Logout</string>
+
+    <string name="task">Task</string>
+    <string name="JenisTask">Jenis Task</string>
+    <string name="TimeTask">Time Task</string>
+
 
 
 

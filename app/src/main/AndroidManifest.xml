@@ -18,6 +18,10 @@
             android:label="@string/label2"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".TaskHasil"
+            android:label="@string/label2"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

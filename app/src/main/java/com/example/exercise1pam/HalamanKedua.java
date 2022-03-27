@@ -1,6 +1,9 @@
 package com.example.exercise1pam;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -11,10 +14,19 @@ public class HalamanKedua extends AppCompatActivity {
     //Mendeklarasikan variabel dengan tipe data Textview
     EditText txEmail, edPass, erepass, edAlamat;
 
+    //Deklarasi variabel untuk button
+    Button btnRegister;
+
+    String taEmail;
+
+
     @Override
     protected void onCreate (Bundle savedInstancestate){
         super.onCreate(savedInstancestate);
         setContentView(R.layout.halamankedua);
+
+        //menghubungkan variabel btnRegis dengan component pada layout
+        btnRegister = findViewById(R.id.btReg);
 
         //Menghubungkan variabel txEmail dengan componen Textview pada Layout
         txEmail = findViewById(R.id.tvEmail);
@@ -27,18 +39,19 @@ public class HalamanKedua extends AppCompatActivity {
 
         //Menghubungkan variabel txEmail dengan componen Textview pada Layout
         erepass = findViewById(R.id.eMrepas);
+        taEmail = txEmail.getText().toString();
 
-        //mendeklarasikan variabel bundle yang akan digunakan untuk mengambil
-        // pesan yang dikirimkan melalui method intent
-        Bundle bundle = getIntent().getExtras();
-
-        //membuat variabel string yang digunakan untuk menyimpan data yang
-        // dikirimkan dari activity sebelumnya dengan kunci "a"
-        String email = bundle.getString("a");
-
-        //membuat variabel string yang digunakan untuk menyimpan data yang
-        // dikirimkan dari activity sebelumnya dengan kunci "b"
-        String pass = bundle.getString("b");
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("a",taEmail.trim());
+                //Membuat objek intent berpindah activity dari halamankedua ke ActivityHasil
+                Intent i = new Intent(getApplicationContext(), HalamanHasil.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+        });
 
 
     }

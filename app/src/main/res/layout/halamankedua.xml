@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/blue"
     android:layout_height="match_parent">
 
 
     <EditText
-        android:id="@+id/textView2"
+        android:id="@+id/textReg"
         android:layout_width="108dp"
         android:layout_height="60dp"
         android:text="@string/bReg"
@@ -53,59 +53,17 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:drawableLeft="@android:drawable/ic_dialog_alert"
-        android:padding="12dp"
+        android:padding="10dp"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
-
-    <EditText
-        android:id="@+id/tvPassword"
-        android:layout_width="245dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/blue"
-        android:ems="10"
-        android:hint="@string/edPass"
-        android:importantForAutofill="no"
-        android:drawableRight="@android:drawable/ic_dialog_info"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
-
-    <EditText
-        android:id="@+id/eMrepas"
-        android:layout_width="245dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/erepass"
-        android:importantForAutofill="no"
-        android:inputType="textPassword"
-        android:padding="12dp"
-
-        android:background="@color/blue"
-        android:textColorHighlight="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.306"
+        app:startIconDrawable="@android:drawable/ic_lock_idle_lock"/>
 
     <EditText
         android:id="@+id/tvEmail"
@@ -116,6 +74,7 @@
         android:background="@color/blue"
         android:drawableLeft="@android:drawable/ic_dialog_email"
         android:ems="10"
+        android:textColor="@color/white"
         android:hint="@string/eemail"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
@@ -123,11 +82,11 @@
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -138,14 +97,58 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@drawable/iconlogin" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/eMrepas"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/blue"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:ems="10"
+        android:hint="@string/erepass"
+        android:importantForAutofill="no"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tvPassword"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/blue"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:ems="10"
+        android:hint="@string/edPass"
+        android:importantForAutofill="no"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
